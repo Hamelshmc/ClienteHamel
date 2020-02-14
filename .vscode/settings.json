@@ -41,4 +41,5 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "typescript.format.semicolons": "insert",
+  "typescript.tsdk": "node_modules\\typescript\\lib",
 }
