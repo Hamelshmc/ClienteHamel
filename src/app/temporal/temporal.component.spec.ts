@@ -8,9 +8,8 @@ describe('TemporalComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TemporalComponent ]
-    })
-    .compileComponents();
+      declarations: [TemporalComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

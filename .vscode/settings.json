@@ -37,20 +37,8 @@
   "files.autoSaveDelay": 1000,
   "files.defaultLanguage": "",
   "files.trimTrailingWhitespace": true,
-  "prettier.bracketSpacing": true,
-  "prettier.singleQuote": true,
-  "prettier.printWidth": 100,
-  "prettier.semi": true,
-  "prettier.trailingComma": "es5",
-  "prettier.jsxBracketSameLine": true,
-  "prettier.arrowParens": "avoid",
-  "prettier.requirePragma": false,
-  "prettier.insertPragma": false,
-  "prettier.proseWrap": "preserve",
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "typescript.format.semicolons": "insert",
-  "prettier.jsxSingleQuote": true,
-  "prettier.useTabs": true
 }
