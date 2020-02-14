@@ -6,9 +6,7 @@ import { MainComponent } from './shell/main/main.component';
 import { FooterComponent } from './shell/footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { MatButtonModule } from '@angular/material/button';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatMenuModule } from '@angular/material/menu';
+import { DemoMaterialModule } from '../material-module';
 
 @NgModule({
   declarations: [
@@ -18,7 +16,7 @@ import { MatMenuModule } from '@angular/material/menu';
     FooterComponent,
     NotFoundComponent
   ],
-  imports: [CommonModule, RouterModule, MatToolbarModule, MatButtonModule, MatMenuModule],
+  imports: [CommonModule, RouterModule, DemoMaterialModule],
   exports: [ShellComponent]
 })
 export class CoreModule {}

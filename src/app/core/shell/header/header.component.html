@@ -1,7 +1,5 @@
-<mat-toolbar>
-  <a routerLink="/"><span>{{ title }}</span> </a>
-
-  <a routerLink="about" routerLinkActive="router-link-active" class="button">
-    <img width="32" style="vertical-align: -0.5em" src="./assets/logo.png" /> <span> About us</span>
-  </a>
+<mat-toolbar class="button-row" color="primary">
+  <span> Hamilton Mercado Cuellar</span>
+  <a mat-button routerLink="/" aria-labelledby="menu">{{ title }}</a>
+  <a mat-button routerLink="about" routerLinkActive="router-link-active" aria-labelledby="menu">About us</a>
 </mat-toolbar>
