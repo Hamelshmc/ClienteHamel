@@ -16,13 +16,17 @@ const routes: Routes = [
     component: NotFoundComponent
   },
   {
+    path: '',
+    loadChildren: () => import('./security/security.module').then(m => m.SecurityModule)
+  },
+  {
     path: '**',
     redirectTo: 'not-found'
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}

@@ -6,7 +6,8 @@ import { MainComponent } from './shell/main/main.component';
 import { FooterComponent } from './shell/footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { DemoMaterialModule } from '../material-module';
+import { MaterialModule } from '../material-module';
+import { SecurityModule } from '../security/security.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { DemoMaterialModule } from '../material-module';
     FooterComponent,
     NotFoundComponent
   ],
-  imports: [CommonModule, RouterModule, DemoMaterialModule],
+  imports: [CommonModule, RouterModule, MaterialModule, SecurityModule.forRoot()],
   exports: [ShellComponent]
 })
 export class CoreModule {}
