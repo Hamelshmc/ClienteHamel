@@ -1,5 +1,6 @@
 {
   "rulesDirectory": ["node_modules/codelyzer"],
+  "extends": ["tslint:latest", "tslint-config-prettier"],
   "rules": {
     "arrow-return-shorthand": true,
     "callable-types": true,
@@ -7,6 +8,14 @@
     "deprecation": {
       "severity": "warn"
     },
+    "object-literal-shorthand": [
+      true,
+      {
+        "method": "never"
+      }
+    ],
+    "no-implicit-dependencies": false,
+    "no-submodule-imports": false,
     "forin": true,
     "import-blacklist": [true, "rxjs/Rx"],
     "interface-over-type-literal": true,
@@ -56,7 +65,7 @@
       }
     ],
     "component-class-suffix": true,
-    "component-selector": [true, "element", "app", "kebab-case","hamel"],
+    "component-selector": [true, "element", "app", "kebab-case", "hamel"],
     "cyclomatic-complexity": [true, 8],
     "directive-class-suffix": true,
     "directive-selector": [true, "attribute", "app", "camelCase"],

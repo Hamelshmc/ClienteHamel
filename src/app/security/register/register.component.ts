@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
-import { MyErrorStateMatcher } from 'src/app/utils/MyErrorStateMatcher';
 import { UserService } from '../services/user.service';
+import { MyErrorStateMatcher } from 'src/app/utils/MyErrorStateMatcher';
 
 @Component({
   selector: 'hamel-register',
