@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TokenStoreService } from 'src/app/security/services/token-store.service';
 
 @Component({
   selector: 'hamel-shell',

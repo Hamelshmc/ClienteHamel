@@ -5,7 +5,13 @@ import {
   RouterStateSnapshot,
   CanActivate
 } from '@angular/router';
-import { HttpRequest, HttpHandler, HttpEvent, HttpErrorResponse } from '@angular/common/http';
+import {
+  HttpRequest,
+  HttpHandler,
+  HttpEvent,
+  HttpErrorResponse,
+  HttpInterceptor
+} from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { TokenStoreService } from './token-store.service';
 import { catchError } from 'rxjs/operators';
@@ -13,13 +19,13 @@ import { catchError } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthInterceptorService implements CanActivate {
+export class AuthInterceptorService implements CanActivate, HttpInterceptor {
   constructor(private router: Router, private tokenStore: TokenStoreService) {
     this.tokenStore.select$().subscribe(token => (this.token = token));
   }
 
   private token = '';
-  
+
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
@@ -36,7 +42,7 @@ export class AuthInterceptorService implements CanActivate {
   }
 
   public intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const authHeader = { Authorization: 'bearer ' + this.token };
+    const authHeader = { Authorization: 'Bearer ' + this.token };
     const authReq = req.clone({ setHeaders: authHeader });
     return next.handle(authReq).pipe(catchError(this.handleError.bind(this)));
   }

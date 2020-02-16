@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { MaterialModule } from '../material-module';
 import { SecurityModule } from '../security/security.module';
+import { EmpleadoModule } from '../empleado/empleado.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,13 @@ import { SecurityModule } from '../security/security.module';
     FooterComponent,
     NotFoundComponent
   ],
-  imports: [CommonModule, RouterModule, MaterialModule, SecurityModule.forRoot()],
+  imports: [
+    CommonModule,
+    RouterModule,
+    MaterialModule,
+    SecurityModule.forRoot(),
+    EmpleadoModule.forRoot()
+  ],
   exports: [ShellComponent]
 })
 export class CoreModule {}

@@ -24,10 +24,6 @@ const routes: Routes = [
     path: 'admindashboard',
     component: AdminDashboardComponent,
     canActivate: [AuthInterceptorService]
-  },
-  {
-    path: '**',
-    redirectTo: 'register'
   }
 ];
 

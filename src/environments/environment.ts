@@ -3,7 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  appName: 'Home',
+  appName: 'Hamilton Mercado Cuellar',
   production: false,
   unitsCulture: 'metric'
 };

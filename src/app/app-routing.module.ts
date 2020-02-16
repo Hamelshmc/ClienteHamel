@@ -20,6 +20,10 @@ const routes: Routes = [
     loadChildren: () => import('./security/security.module').then(m => m.SecurityModule)
   },
   {
+    path: 'empleados',
+    loadChildren: () => import('./empleado/empleado.module').then(m => m.EmpleadoModule)
+  },
+  {
     path: '**',
     redirectTo: 'not-found'
   }

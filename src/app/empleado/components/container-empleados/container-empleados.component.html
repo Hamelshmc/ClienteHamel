@@ -1,0 +1,10 @@
+<hamel-buscador-empleados
+  (textoBusqueda)="cambioTextoBusqueda($event)"
+></hamel-buscador-empleados>
+<hamel-tabla-empleados [almacenEmpleados]="almacenEmleados"></hamel-tabla-empleados>
+<hamel-paginador-empleados
+  [size]="size"
+  (size)="cambioNumeroEmpleados($event)"
+  [page]="page"
+  (page)="cambioNumeroPagina($event)"
+></hamel-paginador-empleados>

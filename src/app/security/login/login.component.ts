@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MyErrorStateMatcher } from 'src/app/utils/MyErrorStateMatcher';
 import { UserService } from '../services/user.service';
 import { Router } from '@angular/router';
+import { TokenStoreService } from '../services/token-store.service';
 
 @Component({
   selector: 'hamel-login',
@@ -16,7 +17,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private userService: UserService,
-    private router: Router
+    private router: Router,
+    private tokenStore: TokenStoreService
   ) {}
 
   public ngOnInit(): void {
@@ -36,10 +38,8 @@ export class LoginComponent implements OnInit {
 
   public login() {
     const user = this.formGroup.value;
-    console.log(user);
     this.userService.login(user).subscribe(response => {
       if (response) {
-        console.log(response);
         if (response.token) {
           localStorage.setItem('currentUser', JSON.stringify(response));
           if (response.roles[0] === 'ADMIN') {

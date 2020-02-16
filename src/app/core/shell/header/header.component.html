@@ -1,17 +1,49 @@
 <mat-toolbar class="button-row" color="primary">
-  <span> Hamilton Mercado Cuellar</span>
   <a mat-button routerLink="/" aria-labelledby="menu">{{ title }}</a>
   <a mat-button routerLink="about" routerLinkActive="router-link-active" aria-labelledby="menu"
     >About us</a
   >
   <a
     mat-button
+    routerLink="empleados"
+    routerLinkActive="router-link-active"
+    aria-labelledby="menu"
+    *ngIf="currentstatus.status"
+    >empleados</a
+  >
+  <a
+    mat-button
+    routerLink="admindashboard"
+    routerLinkActive="router-link-active"
+    aria-labelledby="menu"
+    *ngIf="currentstatus.status && rol === 'ADMIN'"
+    >admindashboard</a
+  >
+  <a
+    mat-button
+    routerLink="userdashboard"
+    routerLinkActive="router-link-active"
+    aria-labelledby="menu"
+    *ngIf="currentstatus.status && rol === 'USER'"
+    >userdashboard</a
+  >
+  <a
+    mat-button
     routerLink="register"
     routerLinkActive="router-link-active"
     aria-labelledby="menu"
+    *ngIf="!currentstatus.status"
     >register</a
   >
-  <a mat-button routerLink="login" routerLinkActive="router-link-active" aria-labelledby="menu"
+  <a
+    mat-button
+    routerLink="login"
+    routerLinkActive="router-link-active"
+    aria-labelledby="menu"
+    *ngIf="!currentstatus.status"
     >Login</a
+  >
+  <a mat-button (click)="logout()" aria-labelledby="menu" *ngIf="currentstatus.status"
+    >Logout</a
   >
 </mat-toolbar>

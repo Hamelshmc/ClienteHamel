@@ -21,4 +21,6 @@ export class UserService {
     const headers = new HttpHeaders({ 'Access-Control-Allow-Origin': '*' });
     return this.http.post(this.API_LOGIN, user, { headers });
   }
+
+
 }
